@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<SotaStudio_ProductAjaxScrolling>
+			<active>true</active>
+			<codePool>community</codePool>
+			<depends>
+				<SotaStudio_Jquery />
+			</depends>
+		</SotaStudio_ProductAjaxScrolling>
+	</modules>
+</config>

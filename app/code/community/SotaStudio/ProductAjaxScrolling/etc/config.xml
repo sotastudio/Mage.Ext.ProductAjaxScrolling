@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<SotaStudio_ProductAjaxScrolling>
+			<version>1.0.0</version>
+		</SotaStudio_ProductAjaxScrolling>
+	</modules>
+	<frontend>
+		<layout>
+			<updates>
+				<sota_pias>
+					<file>sota/productajaxscrolling.xml</file>
+				</sota_pias>
+			</updates>
+		</layout>
+	</frontend>
+</config>
