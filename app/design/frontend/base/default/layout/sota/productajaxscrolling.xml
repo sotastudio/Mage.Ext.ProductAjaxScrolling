@@ -3,7 +3,7 @@
 	<catalog_category_default translate="label">
 		<reference name="head">
 			<action method="addJs" ifconfig="catalog/frontend/useajaxscroll">
-				<script>sota/productajaxscrolling/jquery.ias.min.js</script>
+				<script>sota/productajaxscrolling/v1.0.1/jquery-ias.min.js</script>
 			</action>
 		</reference>
 		<reference name="content">
@@ -13,7 +13,7 @@
 	<catalog_category_layered translate="label">
 		<reference name="head">
 			<action method="addJs" ifconfig="catalog/frontend/useajaxscroll">
-				<script>sota/productajaxscrolling/jquery.ias.min.js</script>
+				<script>sota/productajaxscrolling/v1.0.1/jquery-ias.min.js</script>
 			</action>
 		</reference>
 		<reference name="content">
@@ -23,7 +23,7 @@
 	<catalogsearch_advanced_result translate="label">
 		<reference name="head">
 			<action method="addJs" ifconfig="catalog/frontend/useajaxscroll">
-				<script>sota/productajaxscrolling/jquery.ias.min.js</script>
+				<script>sota/productajaxscrolling/v1.0.1/jquery-ias.min.js</script>
 			</action>
 		</reference>
 		<reference name="content">
@@ -33,7 +33,7 @@
 	<catalogsearch_result_index translate="label">
 		<reference name="head">
 			<action method="addJs" ifconfig="catalog/frontend/useajaxscroll">
-				<script>sota/productajaxscrolling/jquery.ias.min.js</script>
+				<script>sota/productajaxscrolling/v1.0.1/jquery-ias.min.js</script>
 			</action>
 		</reference>
 		<reference name="content">
@@ -43,7 +43,7 @@
 	<tag_product_list translate="label">
 		<reference name="head">
 			<action method="addJs" ifconfig="catalog/frontend/useajaxscroll">
-				<script>sota/productajaxscrolling/jquery.ias.min.js</script>
+				<script>sota/productajaxscrolling/v1.0.1/jquery-ias.min.js</script>
 			</action>
 		</reference>
 		<reference name="content">
