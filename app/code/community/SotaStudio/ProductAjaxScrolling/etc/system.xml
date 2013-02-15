@@ -14,6 +14,14 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</useajaxscroll>
+						<page_threshold translate="label">
+							<label>Page number after which a link is displayed</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>1010</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</page_threshold>
 					</fields>
 				</frontend>
 			</groups>

@@ -23,4 +23,11 @@
 			</modules>
 		</translate>
 	</frontend>
+	<default>
+		<catalog>
+			<frontend>
+				<page_threshold>5</page_threshold>
+			</frontend>
+		</catalog>
+	</default>
 </config>
