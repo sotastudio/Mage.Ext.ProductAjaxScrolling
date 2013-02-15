@@ -13,5 +13,14 @@
 				</sota_pas>
 			</updates>
 		</layout>
+		<translate>
+			<modules>
+				<SotaStudio_ProductAjaxScrolling>
+					<files>
+						<default>SotaStudio_ProductAjaxScrolling.csv</default>
+					</files>
+				</SotaStudio_ProductAjaxScrolling>
+			</modules>
+		</translate>
 	</frontend>
 </config>
