@@ -1,63 +1,59 @@
 <?php if (Mage::getStoreConfigFlag('catalog/frontend/useajaxscroll')): ?>
 <?php
-// Get the default setting for grid or list mode
-	$productListMode = Mage::getStoreConfig('catalog/frontend/list_mode');
-	if ($productListMode == 'grid-list')
+	// Get the default setting for grid or list mode
+	$productListMode 	= Mage::getStoreConfig('catalog/frontend/list_mode');
+	$pageThreshold 		= Mage::getStoreConfig('catalog/frontend/page_threshold');
+
+	// Assign the initial Product List Mode
+	if ($productListMode == 'grid-list') {
 		$productListMode = 'grid';
-	elseif ($productListMode == 'list-grid')
+	} elseif ($productListMode == 'list-grid') {
 		$productListMode = 'list';
-
-// Check if this setting is overwritten by the user
-	if ($this->getRequest()->getParam('mode')) {
-		if($this->getRequest()->getParam('mode') == 'grid')
-			$productListMode = 'grid';
-		else
-			$productListMode = 'list';
 	}
-	?>
+
+	// Check if this setting is overwritten by the user
+	if ($this->getRequest()->getParam('mode')) {
+		if($this->getRequest()->getParam('mode') == 'grid') {
+			$productListMode = 'grid';
+		} else {
+			$productListMode = 'list';
+		}
+	}
+?>
 <script type="text/javascript">
-    (function($) {
-        $(function() {
-            var container 	= '.category-products',
-                    toolbar		= container + ' .toolbar',
-                    tbTop		= toolbar + ' .top',
-                    tbBottom	= toolbar + ' .bottom';
-
-            var viewModeEl = $(tbBottom + ' .view-mode').detach();
-            $(tbTop).append(
-                    $(viewModeEl).removeClass('pull-left').css({'text-align': 'center'})
-            );
-
-            $.ias({
-                container: 		container,
-				<?php if ($productListMode == 'grid'): ?>
-                    item: 		'.products-row',
-					<?php else: ?>
-                    item: 		'.products-list',
-					<?php endif; ?>
-                pagination: 	'.toolbar .pages, .toolbar .limiter',
-                next: 			'.next',
-                loader: 		'<div class="inner"><img src="<?php echo($this->getSkinUrl('images/loader.gif')); ?>" /><br /><?php echo __('Loading more products, please be patient...'); ?>' + '</div>',
-                // Small fix to remove the class 'first' from ajax-loaded items.
-				<?php if ($productListMode == 'grid'): ?>
-                    onLoadItems: function(items) {
-                        $.each(items, function(index, item) {
-                            $(item).filter('.first').removeClass('first');
-                        });
-                    }
-					<?php else: ?>
-                    onLoadItems: function(items) {
-                        $.each(items, function(index, item) {
-                            $(item).children('.first').removeClass('first');
-                        });
-                    }
-					<?php endif; ?>
-                , customLoaderProc: function(loader){
-                    $('body').append(loader);
-                }
-            });
-
-        });
-    })(jQuery);
+    jQuery.ias({
+        container: 	'.category-products',
+		<?php if ($productListMode == 'grid'): ?>
+            item: '.products-grid',
+		<?php else: ?>
+            item: '.products-list',
+		<?php endif; ?>
+        pagination: '.toolbar .pager',
+        next: 		'.next',
+        loader: 	'<img src="<?php echo($this->getSkinUrl('images/loader.gif')); ?>" /> <?php echo $this->__('Loading more products, please be patient...'); ?>',
+		trigger:	'<?php echo $this->__('Load more products'); ?>',
+        triggerPageThreshold: <?php echo $pageThreshold; ?>
+		<?php if ($productListMode == 'grid'): ?>
+			/*
+			, onLoadItems: function(items) {
+				$.each(items, function(index, item) {
+					$(item).filter('.first').removeClass('first');
+				});
+			}
+			*/
+		<?php else: ?>
+			/*
+			, onLoadItems: function(items) {
+				$.each(items, function(index, item) {
+					$(item).children('.first').removeClass('first');
+				});
+			}*/
+		<?php endif; ?>
+		/*
+		, customLoaderProc: function(loader){
+			$('body').append(loader);
+		}
+		*/
+    });
 </script>
 <?php endif; ?>
