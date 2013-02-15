@@ -8,9 +8,9 @@
 	<frontend>
 		<layout>
 			<updates>
-				<sota_pias>
+				<sota_pas>
 					<file>sota/productajaxscrolling.xml</file>
-				</sota_pias>
+				</sota_pas>
 			</updates>
 		</layout>
 	</frontend>
